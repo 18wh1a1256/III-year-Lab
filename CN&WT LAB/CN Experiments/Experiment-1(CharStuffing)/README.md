@@ -11,4 +11,4 @@ Implement the data link layer framing method such as Character Stuffing.
 
 ### Output
 
-![output](CN1.png)
+![output](CN_CharStuffing.png)
