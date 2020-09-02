@@ -1,0 +1,29 @@
+Character Stuffing
+
+int main()
+{
+    int fr,i,d=0;
+    printf("Enter the number of frames: ");
+    scanf("%d",&fr);
+    char data[50];
+    printf("Enter frames: ");
+    scanf("%s", data);
+    printf("\nOriginal data: %s",data);
+    printf("\nAfter Character Stuffing: dlestx");
+    for(i=0;i<fr;i++){
+        printf("%c",data[i]);
+        if(data[i]=='d'){
+            d++;
+        }else if(data[i]=='l' && d==1){
+            d++;
+        }else if(data[i]=='e' && d==2){
+            printf("dle");
+            d=0;
+        }else{
+            d=0;
+        }
+    }
+    printf("dlestx\n");
+    printf("Received data after De-stuffing: %s\n",data);
+    return 0;
+}
