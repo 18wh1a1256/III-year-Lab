@@ -1,0 +1,54 @@
+CN Bit Stuffing
+
+/******************************************************************************
+
+                            Online C Compiler.
+                Code, Compile, Run and Debug C program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <stdio.h>
+
+int main()
+{
+    int n,i,j=0,count=0;
+    printf("Enter size of bits: ");
+    scanf("%d",&n);
+    int data[n], stuff_data[50];
+    printf("Enter the bits: ");
+    for(i=0;i<n;i++){
+        scanf("%d",&data[i]);
+    }
+    for(i=0; i<n; i++){
+        if(data[i] == 1){
+            count++;
+        }else{
+            count = 0;
+        }
+        stuff_data[j] = data[i];
+        j++;
+        if(count==5 && i!=n-1){
+            count=0;
+            stuff_data[j]=0;
+            j++;
+        }
+    }
+    printf("At Sender\n");
+    printf("After Bit Stuffing: 01111110");
+    for(i=0; i<j; i++){
+        printf("%d",stuff_data[i]);
+    }
+    printf("01111110");
+    printf("\nAt Receiver\n");
+    printf("Data received: 01111110");
+    for(i=0; i<j; i++){
+        printf("%d",stuff_data[i]);
+    }
+    printf("01111110");
+    printf("\nAfter De-Stuffing: ");
+    for(i=0;i<n;i++){
+        printf("%d",data[i]);
+    }
+    return 0;
+}
