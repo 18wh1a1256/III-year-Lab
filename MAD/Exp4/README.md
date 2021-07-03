@@ -8,4 +8,4 @@ An application that uses a menu with 3 options for dialing a number, opening a w
 ![output](sms.jpg)
 ![output](smsop.jpg)
 ![output](dial.jpg)
-![output](dialop.jpg)
+![output](diapop.jpg)
